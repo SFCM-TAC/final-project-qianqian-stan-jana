@@ -4,12 +4,16 @@ var ctx = cvs.getContext("2d");
 // load images
 
 var stan = new Image();
+var qian = new Image();
+var jana = new Image();
 var bg = new Image();
 var fg = new Image();
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
 stan.src = "images/stan.gif";
+jana.src = "images/jana.gif";
+qian.src = "images/qian.gif";
 bg.src = "images/bg.png";
 fg.src = "images/fg.png";
 pipeNorth.src = "images/pipeNorth.png";
@@ -82,7 +86,12 @@ function draw(){
         if( bX + stan.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+stan.height >= pipe[i].y+constant) || bY + stan.height >=  cvs.height - fg.height){
             location.reload(); // reload the page
         }
-
+        if( bX + jana.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+jana.height >= pipe[i].y+constant) || bY + jana.height >=  cvs.height - fg.height){
+            location.reload(); // reload the page
+        }
+        if( bX + qian.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+qian.height >= pipe[i].y+constant) || bY + qian.height >=  cvs.height - fg.height){
+            location.reload(); // reload the page
+        }
         if(pipe[i].x == 5){
             score++;
             scor.play();
@@ -96,6 +105,10 @@ function draw(){
     ctx.drawImage(fg,0,cvs.height - fg.height);
 
     ctx.drawImage(stan,bX,bY);
+
+    ctx.drawImage(jana,bX,bY);
+
+    ctx.drawImage(qian,bX,bY);
 
     bY += gravity;
 
