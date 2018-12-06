@@ -85,13 +85,14 @@ function draw(){
 
         if( bX + stan.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+stan.height >= pipe[i].y+constant) || bY + stan.height >=  cvs.height - fg.height){
             location.reload(); // reload the page
-        }
+
         if( bX + jana.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+jana.height >= pipe[i].y+constant) || bY + jana.height >=  cvs.height - fg.height){
             location.reload(); // reload the page
-        }
+
         if( bX + qian.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+qian.height >= pipe[i].y+constant) || bY + qian.height >=  cvs.height - fg.height){
             location.reload(); // reload the page
         }
+
         if(pipe[i].x == 5){
             score++;
             scor.play();
