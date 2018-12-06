@@ -3,13 +3,13 @@ var ctx = cvs.getContext("2d");
 
 // load images
 
-var bird = new Image();
+var stan = new Image();
 var bg = new Image();
 var fg = new Image();
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
-bird.src = "images/bird.png";
+stan.src = "images/stan.gif";
 bg.src = "images/bg.png";
 fg.src = "images/fg.png";
 pipeNorth.src = "images/pipeNorth.png";
@@ -79,7 +79,7 @@ function draw(){
 
         // detect collision
 
-        if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
+        if( bX + stan.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+stan.height >= pipe[i].y+constant) || bY + stan.height >=  cvs.height - fg.height){
             location.reload(); // reload the page
         }
 
@@ -95,7 +95,7 @@ function draw(){
 
     ctx.drawImage(fg,0,cvs.height - fg.height);
 
-    ctx.drawImage(bird,bX,bY);
+    ctx.drawImage(stan,bX,bY);
 
     bY += gravity;
 
