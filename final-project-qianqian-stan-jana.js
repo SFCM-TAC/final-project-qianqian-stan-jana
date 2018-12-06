@@ -97,10 +97,6 @@ function draw(){
 
     ctx.drawImage(stan,bX,bY);
 
-    ctx.drawImage(jana,bX,bY);
-
-    ctx.drawImage(qian,bX,bY);
-
     bY += gravity;
 
     ctx.fillStyle = "#000";
