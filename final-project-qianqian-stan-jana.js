@@ -18,7 +18,7 @@ pipeSouth.src = "images/pipeSouth.png";
 
 // some variables
 
-var gap = 125;
+var gap = 110;
 var constant;
 
 var bX = 10;
@@ -55,8 +55,10 @@ pipe[0] = {
     x : cvs.width,
     y : 0
 };
-
-
+//gap changes
+if (score >= 1){
+  gap = gap + speed;
+}
 // draw images
 function draw(){
 
@@ -68,7 +70,7 @@ function draw(){
         ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
         ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
 
-        pipe[i].x = pipe[i].x - speed;
+        pipe[i].x--;
 
         if( pipe[i].x == 10 ){
             pipe.push({
@@ -87,9 +89,9 @@ function draw(){
             score++;
             scor.play();
         }
-        if (score >= 1){
-          speed = speed + 0.005;
-        }
+        // if (score >= 1){
+        //   speed = speed + 0.005;
+        // }
 
     }
 
