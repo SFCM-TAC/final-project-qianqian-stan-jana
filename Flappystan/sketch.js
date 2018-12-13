@@ -9,3 +9,10 @@ function draw() {
   bird.update();
   bird.show();
 }
+function keyPressed() {
+  console.log(key);
+  if (key == ' ') {
+  bird.up();
+
+  }
+}
