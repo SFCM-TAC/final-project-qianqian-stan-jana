@@ -4,7 +4,7 @@ function Pipe(){
   this.x = width;
   this.w = 50;
   this.speed = 5;
-  this.acceleration = 0.003;
+  this.acceleration = 0.001;
 
 
   this.highlight = false;
