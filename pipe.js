@@ -4,6 +4,8 @@ function Pipe(){
   this.x = width;
   this.w = 50;
   this.speed = 5;
+  this.acceleration = 0.003;
+
 
   this.highlight = false;
 
@@ -28,6 +30,10 @@ function Pipe(){
   }
 
   this.update = function(){
-    this.x -= this.speed + 5;
+    this.x -= this.speed;
+  }
+  if(count >= 1){
+    this.speed = this.speed + acceleration;
+
   }
 }

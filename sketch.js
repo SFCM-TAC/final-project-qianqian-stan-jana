@@ -3,6 +3,7 @@ var pipes = [];
 var count = 0;
 var flag = true;
 var pipe_flag = true;
+var acceleration = 50;
 //var w = 700;
 //var h = 700;
 var w = window.screen.width/1.3;
@@ -32,7 +33,7 @@ function draw(){
   str = "Streak: " + count;
   text(str, w/3, h/5);
 
-  if (frameCount % 150 == 0){
+  if (frameCount % 100 == 0){
     pipes.push(new Pipe());
   }
   for (var i = 0; i < pipes.length; i ++){
@@ -40,6 +41,10 @@ function draw(){
     if (pipe_flag == true){
       pipes[i].update();
     }
+    // if (count >= 1){
+
+    //   pipes.push(new Pipe());
+    // }
     if (flag == true && pipes[i].x < 0/*(width/15)*/){ //negative?
       flag = false;
       count += 1;
@@ -56,6 +61,7 @@ function draw(){
       pipes.splice(i,1); //deletes element from array
       flag = true;
     }
+
   }
 }
 
