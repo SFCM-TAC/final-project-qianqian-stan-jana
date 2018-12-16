@@ -30,7 +30,7 @@ function draw(){
   bird.show();
   fill(0);
   textSize(32);
-  str = "Streak: " + count;
+  str = "Score: " + count;
   text(str, w/3, h/5);
 
   if (frameCount % 100 == 0){
@@ -48,11 +48,11 @@ function draw(){
     if (flag == true && pipes[i].x < 0/*(width/15)*/){ //negative?
       flag = false;
       count += 1;
-      str = "Streak: " + count;
+      str = "Score: " + count;
     }
 
     if (pipes[i].hits(bird)){
-      str = "Streak: " + count;
+      str = "Score: " + count;
       startOver();
       pipe_flag = false;
     }
@@ -66,7 +66,7 @@ function draw(){
 }
 
 function startOver(){
-  var button = createButton("Play Again?");
+  var button = createButton("Start again?");
   button.position(windowWidth/2, windowHeight/2);
   button.mousePressed(reset);
 }
