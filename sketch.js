@@ -73,7 +73,7 @@ function draw(){
 }
 
 function startOver(){
-  var button = createButton("Start again?");
+  var button = createButton("Hahahaha Bird died, start again?");
   button.position(windowWidth/2, windowHeight/2);
   button.mousePressed(reset);
 }
