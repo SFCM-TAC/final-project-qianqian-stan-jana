@@ -10,6 +10,10 @@ var w = window.screen.width/1.3;
 var h = window.screen.height/1.3;
 var cnv;
 
+var r = 250
+var g = 100
+var b = 0
+
 function centerCanvas(){
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
@@ -25,7 +29,7 @@ function setup(){
 }
 
 function draw(){
-  background(176,224,230);
+  background(r, g, b);
   bird.update();
   bird.show();
   fill(0);
@@ -49,6 +53,9 @@ function draw(){
       flag = false;
       count += 1;
       str = "Score: " + count;
+      r = Math.floor((Math.random() * 255));
+      g = Math.floor((Math.random() * 255));
+      b = Math.floor((Math.random() * 255));
     }
 
     if (pipes[i].hits(bird)){
@@ -92,5 +99,15 @@ function touchStarted(){
 function keyPressed(){
   if (key == ' ' && pipe_flag == true){
     bird.up();
+    bird.w = 128;
+    bird.h = 128;
+    bird.distance = 40;
+    setTimeout (birdReset, 200)
   }
+}
+
+function birdReset(){
+  bird.w = 32;
+  bird.h = 32;
+  bird.distance = 5;
 }
