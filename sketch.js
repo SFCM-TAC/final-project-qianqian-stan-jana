@@ -33,7 +33,7 @@ function draw(){
   str = "Streak: " + count;
   text(str, w/3, h/5);
 
-  if (frameCount % 100 == 0){
+  if (frameCount % 50 == 0){
     pipes.push(new Pipe());
   }
   for (var i = 0; i < pipes.length; i ++){

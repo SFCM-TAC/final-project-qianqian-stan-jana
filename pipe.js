@@ -3,8 +3,8 @@ function Pipe(){
   this.bottom = random((height-1)/2);
   this.x = width;
   this.w = 50;
-  this.speed = 5;
-  this.acceleration = 0.001;
+  this.speed = 10;
+  this.acceleration = 10;
 
 
   this.highlight = false;
@@ -32,8 +32,14 @@ function Pipe(){
   this.update = function(){
     this.x -= this.speed;
   }
-  if(count >= 1){
-    this.speed = this.speed + acceleration;
+  if(count >= 3){
+    this.x -= this.speed + acceleration;
 
+  }
+  if(count >= 5){
+    this.x -= this.speed + acceleration * 2;
+  }
+  if(count >= 8){
+    this.x -= this.speed + acceleration * 4;
   }
 }
