@@ -32,8 +32,8 @@ function draw(){
   background(r, g, b);
   bird.update();
   bird.show();
-  fill(0);
-  textSize(32);
+  fill(255);
+  textSize(64);
   str = "Score: " + count;
   text(str, w/3, h/5);
 
